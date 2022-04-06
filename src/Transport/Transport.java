@@ -1,12 +1,52 @@
 package Transport;
 
 class Transport {
-    protected boolean isRideable;
-    protected String color;
-    final protected String brand;
-    final protected String model;
-    protected int number_of_wheels;
-    protected Wheel wheel;
+    private boolean isRideable;
+    private String color;
+    final private String brand;
+    final private String model;
+    private int number_of_wheels;
+    private Wheel wheel;
+
+    public String getBrand() {
+        return brand;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public Wheel getWheel() {
+        return wheel;
+    }
+
+    public void setWheel(Wheel wheel) {
+        this.wheel = wheel;
+    }
+
+    public int getNumber_of_wheels() {
+        return number_of_wheels;
+    }
+
+    public void setNumber_of_wheels(int number_of_wheels) {
+        this.number_of_wheels = number_of_wheels;
+    }
+
+    public String getColor() {
+        return color;
+    }
+
+    public void setColor(String color) {
+        this.color = color;
+    }
+
+    public boolean isRideable() {
+        return isRideable;
+    }
+
+    public void setRideable(boolean rideable) {
+        isRideable = rideable;
+    }
 
     public Transport(String brand, String model, String color,
                      int number_of_wheels, Wheel wheel) {

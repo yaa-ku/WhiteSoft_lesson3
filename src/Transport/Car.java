@@ -1,13 +1,29 @@
 package Transport;
 
 public class Car  extends Transport{
-    protected  Engine engine;
-    protected String number;
-    protected String VIN;
+    private   Engine engine;
+    final private String number;
+    final private String VIN;
+
+    public Engine getEngine() {
+        return engine;
+    }
+
+    public void setEngine(Engine engine) {
+        this.engine = engine;
+    }
+
+    public String getNumber() {
+        return number;
+    }
+
+    public String getVIN() {
+        return VIN;
+    }
 
     public Car(){
         super();
-        this.number_of_wheels = 4;
+        this.setNumber_of_wheels(4);
         this.engine = new Engine();
         this.VIN = "undefined";
         this.number = "undefined";
@@ -30,26 +46,26 @@ public class Car  extends Transport{
 
     @Override
     public String Ride() {
-        if (!this.isRideable){
+        if (!this.isRideable()){
             return "you can't ride a broken car. repair it first!";
         }
         else if (!this.engine.isWorking) {
             return "you can't ride a car with a broken engine. repair it first!";
         }
         else {
-            return "this " + this.color + " car is riding!";
+            return "this " + this.getColor() + " car is riding!";
         }
     }
 
     @Override
     public String Crash() {
-        isRideable = false;
+        this.setRideable(false);
         return "oh no! your car is broken! go and repair it";
     }
 
     @Override
     public String Repair() {
-        isRideable = true;
+        this.setRideable(true);
         this.engine.isWorking = true;
         return "car is repaired! good job c:";
     }
