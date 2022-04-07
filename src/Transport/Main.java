@@ -1,7 +1,5 @@
 package Transport;
 
-import java.io.Console;
-
 public class Main {
 
     public static void main(String[] args) {
@@ -14,9 +12,9 @@ public class Main {
         System.out.println(car.Ride());
         System.out.println(car.Repair());
         System.out.println(car.Ride());
-        engine.Ruin();
+        System.out.println(car.RuinEngine());
         System.out.println(car.Ride());
-        System.out.println(car.Repair());
+        System.out.println(car.RepairEngine());
         System.out.println(car.Ride());
     }
 }

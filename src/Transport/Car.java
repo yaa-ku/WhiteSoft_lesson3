@@ -63,10 +63,19 @@ public class Car  extends Transport{
         return "oh no! your car is broken! go and repair it";
     }
 
+    public String RuinEngine(){
+        this.engine.Ruin();
+        return "engine is ruined! you can't drive your car anymore";
+    }
+
     @Override
     public String Repair() {
         this.setRideable(true);
-        this.engine.isWorking = true;
         return "car is repaired! good job c:";
+    }
+
+    public String RepairEngine() {
+        this.engine.Repair();
+        return "engine is repaired! you can drive your car!";
     }
 }

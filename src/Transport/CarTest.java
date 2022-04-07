@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class CarTest {
 
     @Test
-    void testGetCarInfoDefault() {
+    void testGetInfoDefault() {
         Car car = new Car();
         car.getInfo();
 
@@ -18,7 +18,7 @@ class CarTest {
     }
 
     @Test
-    void testGetCarInfo() {
+    void testGetInfo() {
         Car car = new Car("brand", "model", "color", new Wheel(), new Engine(), "number", "VIN");
         car.getInfo();
 
@@ -29,7 +29,7 @@ class CarTest {
     }
 
     @Test
-    void testCarRideMethodCarIsOk() {
+    void testRideCarIsOk() {
         Car car = new Car();
         car.Ride();
 
@@ -37,7 +37,7 @@ class CarTest {
     }
 
     @Test
-    void testCarRideMethodEngineIsBroken() {
+    void testRideEngineIsBroken() {
         Engine engine = new Engine();
         engine.setWorking(false);
 
@@ -49,7 +49,7 @@ class CarTest {
     }
 
     @Test
-    void testCarRideMethodCarIsBroken() {
+    void testRideCarIsBroken() {
         Car car = new Car();
         car.setRideable(false);
         car.Ride();
@@ -58,7 +58,7 @@ class CarTest {
     }
 
     @Test
-    void testCarRideMethodEngineIsBrokenAndCarIsBroken() {
+    void testRideEngineAndCarAreBroken() {
         Engine engine = new Engine();
         engine.setWorking(false);
 
@@ -71,7 +71,7 @@ class CarTest {
     }
 
     @Test
-    void testCarCrashMethod() {
+    void testCrash() {
         Car car = new Car();
         car.Crash();
 
@@ -80,12 +80,31 @@ class CarTest {
     }
 
     @Test
-    void testCarRepairMethod() {
+    void testEngineRuined() {
+        Car car = new Car();
+        car.RuinEngine();
+
+        assertFalse(car.getEngine().isWorking());
+        assertEquals("engine is ruined! you can't drive your car anymore",car.RuinEngine());
+    }
+
+    @Test
+    void testRepair() {
         Car car = new Car();
         car.setRideable(false);
         car.Repair();
 
         assertTrue(car.isRideable());
         assertEquals("car is repaired! good job c:", car.Repair());
+    }
+
+    @Test
+    void testEngineRepair() {
+        Car car = new Car();
+        car.getEngine().setWorking(false);
+        car.RepairEngine();
+
+        assertTrue(car.getEngine().isWorking());
+        assertEquals("engine is repaired! you can drive your car!", car.RepairEngine());
     }
 }

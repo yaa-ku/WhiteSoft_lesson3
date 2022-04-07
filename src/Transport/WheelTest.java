@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class WheelTest {
 
     @Test
-    void testWheelSpin() {
+    void testSpin() {
         Wheel wheel = new Wheel();
         wheel.Spin();
 

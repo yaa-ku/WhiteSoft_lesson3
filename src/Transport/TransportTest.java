@@ -1,11 +1,13 @@
 package Transport;
 
+import org.junit.jupiter.api.Test;
+
 import static org.junit.jupiter.api.Assertions.*;
 
 class TransportTest {
 
     @org.junit.jupiter.api.Test
-    void testTransportGetInfoMethodDefaultTransport() {
+    void testGetInfoDefault() {
         Transport transport = new Transport();
         transport.getInfo();
 
@@ -14,7 +16,7 @@ class TransportTest {
     }
 
     @org.junit.jupiter.api.Test
-    void testTransportGetInfoMethod() {
+    void testGetInfo() {
         Transport transport = new Transport("brand", "model", "color", 10, new Wheel());
         transport.getInfo();
 
@@ -23,7 +25,7 @@ class TransportTest {
     }
 
     @org.junit.jupiter.api.Test
-    void testTransportRideMethodCarIsOk() {
+    void testRideTransportIsOk() {
         Transport transport = new Transport();
         transport.Ride();
 
@@ -31,7 +33,7 @@ class TransportTest {
     }
 
     @org.junit.jupiter.api.Test
-    void testTransportRideMethodCarIsCrashed() {
+    void testRideTransportIsCrashed() {
         Transport transport = new Transport();
         transport.setRideable(false);
         transport.Ride();
@@ -39,8 +41,8 @@ class TransportTest {
         assertEquals("you can't ride a broken... some transport stuff. repair it first!", transport.Ride());
     }
 
-    @org.junit.jupiter.api.Test
-    void testTransportCrashMethod() {
+    @Test
+    void testCrash() {
         Transport transport = new Transport();
         transport.Crash();
 
@@ -49,7 +51,7 @@ class TransportTest {
     }
 
     @org.junit.jupiter.api.Test
-    void testTransportRepairMethod() {
+    void testRepair() {
         Transport transport = new Transport();
         transport.setRideable(false);
         transport.Repair();

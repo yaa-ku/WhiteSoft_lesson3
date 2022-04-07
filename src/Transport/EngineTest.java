@@ -7,7 +7,7 @@ import static org.junit.jupiter.api.Assertions.*;
 class EngineTest {
 
     @Test
-    void testEngineWorkEngineIsWorking() {
+    void testWorkEngineIsWorking() {
         Engine engine = new Engine();
         engine.Work();
 
@@ -15,7 +15,7 @@ class EngineTest {
     }
 
     @Test
-    void testEngineWorkEngineIsRuined() {
+    void testWorkEngineIsRuined() {
         Engine engine = new Engine();
         engine.setWorking(false);
         engine.Work();
@@ -24,7 +24,7 @@ class EngineTest {
     }
 
     @Test
-    void testEngineRuin() {
+    void testRuin() {
         Engine engine = new Engine();
         engine.Ruin();
 
@@ -32,7 +32,7 @@ class EngineTest {
     }
 
     @Test
-    void testEngineRepair() {
+    void testRepair() {
         Engine engine = new Engine();
         engine.setWorking(false);
         engine.Repair();
