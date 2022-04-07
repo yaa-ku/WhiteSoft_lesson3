@@ -2,9 +2,29 @@ package Transport;
 
 public class Engine {
     protected boolean isWorking;
-    protected String name;
-    protected String model;
-    protected String fuel_type;
+    final protected String name;
+    final protected String model;
+    final protected String fuel_type;
+
+    public boolean isWorking() {
+        return isWorking;
+    }
+
+    public void setWorking(boolean working) {
+        isWorking = working;
+    }
+
+    public String getName() {
+        return name;
+    }
+
+    public String getModel() {
+        return model;
+    }
+
+    public String getFuel_type() {
+        return fuel_type;
+    }
 
     public Engine() {
         this.name = "undefined";

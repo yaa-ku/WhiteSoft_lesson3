@@ -41,7 +41,7 @@ public class Car  extends Transport{
     public String getInfo() {
         return super.getInfo()+", number - " + this.number +
                 ", VIN - " + this.VIN +
-                ", engine name - " + this.engine;
+                ", engine name - " + this.engine.name;
     }
 
     @Override
